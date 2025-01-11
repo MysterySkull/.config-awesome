@@ -2,9 +2,6 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
-local gears = require("gears")
-
 require("awful.autofocus")
 
 -- Theme handling library
@@ -19,7 +16,7 @@ require("error_handling")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init("~/.config/awesome/theme/theme.lua")
 
 require("variables.layouts")
 
