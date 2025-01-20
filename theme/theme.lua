@@ -23,7 +23,7 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(3)
+theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
@@ -96,7 +96,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."/titlebar/maximi
 theme.titlebar_maximized_button_normal_active = themes_path.."/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path.."background.jpg"
+theme.wallpaper = themes_path.."/background.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."/layouts/fairhw.png"
@@ -125,6 +125,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 
-return theme
+-- Define wibars variables
+theme.wibar_height = 50
 
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
+return theme
