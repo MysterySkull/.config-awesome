@@ -1,9 +1,5 @@
-local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-
-local clock = require('widgets.wibar.topleft.clock')
-local taglist = require('widgets.wibar.topleft.taglist')
 
 local floating_wibar = { mt = {} }
 
