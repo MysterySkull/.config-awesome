@@ -5,15 +5,20 @@ local floating_wibar = { mt = {} }
 
 -- constructor
 local function new(args)
-   --args = args or {}
+   args = args or {}
 
    local gap = beautiful.useless_gap*2
+   local widget_width = args.width or 500
+   local x_position, y_position
 
-   local x_position = gap
-   local y_position = gap
-
-   local widget_width = 300 --Fixed value to be added TODO
-
+   -- Set position of the widget
+   if args.position == 'right' then
+      y_position = gap
+      x_position = 1920 - gap - widget_width
+   elseif args.position == 'left' then
+      x_position = gap
+      y_position = gap
+   end
 
    local wibar = wibox{
       x = x_position,
@@ -35,8 +40,7 @@ local function new(args)
 end
 
 function floating_wibar.mt:__call(...)
-    return new(...)
+   return new(...)
 end
-
 
 return setmetatable(floating_wibar, floating_wibar.mt)

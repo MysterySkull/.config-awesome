@@ -1,18 +1,27 @@
 local wibox = require('wibox')
-
 local wibar = require('widgets.wibar.floating_wibar')
-
 local taglist = require('widgets.wibar.topleft.taglist')
-local tasklist = require('widgets.wibar.topleft.tasklist')
+local tagbar = require('widgets.wibar.topleft.tagbar')
 
 local _M = {}
 
-_M.create_top_left_wibar = function(s)
+_M.create_main_wibar = function(s)
+
+   local mytaglist = taglist.new{
+      screen = s
+   }
+
+   local taglist_width = taglist.get_width(mytaglist)
+
+   tagbar = tagbar
 
    wibar {
       screen = s,
+      position = 'left',
+      width = taglist_width*2,
       widget = wibox.widget {
-         taglist.create_taglist(s),
+         mytaglist.taglist,
+         tagbar,
          layout = wibox.layout.fixed.horizontal
       }
    }
