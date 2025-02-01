@@ -13,7 +13,7 @@ _M.create_main_wibar = function(s)
    wibar {
       screen = s,
       position = 'left',
-      width = tb.get_width(), --TODO: mettre en soft la largeur de la wibox
+      width = tb.get_width() + 30, --TODO: mettre en soft la largeur de la wibox
       widget = wibox.widget{
          tagbar,
          layout = wibox.layout.fixed.horizontal
