@@ -2,6 +2,9 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+Current_tag = "1"
+Previous_tag = "1"
+
 require("awful.autofocus")
 
 -- Theme handling library

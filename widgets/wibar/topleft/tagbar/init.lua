@@ -1,58 +1,149 @@
 local awful = require('awful')
 local beautiful = require('beautiful')
-local gobject = require('gears.object')
 local gears = require('gears')
-local naughty = require('naughty')
+local rubato = require('rubato')
 local wibox = require('wibox')
 
-screen.connect_signal('tag::history::update', function(screen)
-   awesome.emit_signal('tag::selection', screen)
-end)
+local client_color = '#ffffff'
+local no_client_color = '#777777'
 
-client.connect_signal('manage', function()
-   naughty.notify({text = 'new client'})
-end)
+local previous_selected_tag = 1
+local tagbar_height = beautiful.tag_circle_height
+local wibar_height = beautiful.wibar_height
 
-client.connect_signal('unmanage', function()
-   naughty.notify({text = 'one less client'})
-end)
+local tagbar_circle_selected_width = beautiful.tag_circle_selected_width
+local tagbar_circle_unselected_width = beautiful.tag_circle_unselected_width
 
-local tag_button = function(id)
+local tagbar_margin = (wibar_height - tagbar_height) / 2
+
+local tag_bar = { mt = {} }
+
+local tag_item = function(widget_width, color, index, animation_type)
+
+   local animate = function(position)
+      return rubato.timed{
+         duration = 0.3,
+         pos = position,
+         easing = rubato.quadradic
+      }
+   end
+
+   local t_buttons = gears.table.join(
+      awful.button({ }, 1, function() awful.screen.focused().tags[index]:view_only()  end)
+   )
+
+   local t_item = wibox.widget{
+      {
+         text = '',
+         widget = wibox.widget.textbox
+      },
+      visible = true,
+      forced_width = widget_width,
+      bg = color,
+      shape = gears.shape.rounded_bar,
+      widget = wibox.container.background
+   }
+
+   local animation
+
+   if animation_type ~= nil then
+      if animation_type == "selection" then
+         animation = animate(tagbar_circle_unselected_width)
+      elseif animation_type == "unselection" then
+         animation = animate(tagbar_circle_selected_width)
+      end
+      animation:subscribe(function(w)
+         t_item.forced_width = w
+      end)
+      animation.target = widget_width
+   end
+
    return wibox.widget{
       {
-         {
-            text = ' ',
-            widget = wibox.widget.textbox,
-         },
-         id = id,
-         fg = "#000000",
-         bg = "#ffffff",
-         forced_width = 15,
-         shape = gears.shape.rounded_bar,
-         visible = true,
-         widget = wibox.container.background
-
+         widget = t_item
       },
-      bottom = 7.5,
-      top = 7.5,
-      left = 7.5/2,
-      right = 7.5/2,
+      top = tagbar_margin,
+      bottom = tagbar_margin,
+      left = tagbar_margin/2,
+      right = tagbar_margin/2,
+      buttons = t_buttons,
       widget = wibox.container.margin
    }
 end
 
-local tagbar = wibox.widget{
-   tag_button("1"),
-   tag_button("2"),
-   widget = wibox.layout.fixed.horizontal
-}
+local update_tagbar_client_number = function(self)
+   self:reset()
+   for i, k in pairs(awful.screen.focused().tags) do
+      --naughty.notify({text = i .. ' & ' .. k.name})
+      local color
+      if #k:clients() > 0 then color = client_color else color = no_client_color end
+      if k.selected == true then
+         self:add(tag_item(tagbar_circle_selected_width, color))
+      else
+         self:add(tag_item(tagbar_circle_unselected_width, color))
+      end
+   end
+end
 
-awesome.connect_signal('tag::selection', function(screen)
-   naughty.notify({text = 'tag selection'})
-   local tag = awful.screen.focused{}.selected_tag.name
-   local tbar = tagbar.get_children()
-   naughty.notify({text = tbar.widget.text})
-   tbar.get_children_by_id("1")[1].forced_width = 25
-end)
+local update_tagbar_animation = function(self)
+   local selected_tag
 
-return tagbar
+   self:reset()
+   for i, k in pairs(awful.screen.focused().tags) do
+      --naughty.notify({text = i .. ' & ' .. k.name})
+      local color
+      if #k:clients() > 0 then color = client_color else color = no_client_color end
+      if k.selected == true  then
+
+         if k.index ~= previous_selected_tag then
+            self:add(tag_item(tagbar_circle_selected_width, color, k.index, "selection"))
+            selected_tag = k.index
+         else
+            self:add(tag_item(tagbar_circle_selected_width, color, k.index))
+            selected_tag = k.index
+         end
+      elseif k.index == previous_selected_tag then
+         self:add(tag_item(tagbar_circle_unselected_width, color, k.index, "unselection"))
+      else
+         self:add(tag_item(tagbar_circle_unselected_width, color, k.index))
+      end
+   end
+
+   previous_selected_tag = selected_tag
+end
+
+tag_bar.get_width = function()
+   local width = #awful.screen.focused().tags 
+      * (tagbar_circle_unselected_width + tagbar_margin)
+      + tagbar_circle_selected_width - tagbar_circle_unselected_width
+   return width
+end
+
+local function new(args)
+
+   local t_bar = wibox.widget{
+      layout = wibox.layout.fixed.horizontal
+   }
+
+   update_tagbar_client_number(t_bar)
+
+   awesome.connect_signal('tag::selection', function()
+      update_tagbar_animation(t_bar)
+   end)
+
+   awesome.connect_signal('client::added', function()
+      update_tagbar_client_number(t_bar)
+   end)
+
+   awesome.connect_signal('client::removed', function()
+      update_tagbar_client_number(t_bar)
+   end)
+
+   return t_bar
+end
+
+function tag_bar.mt:__call(...)
+   return new(...)
+end
+
+return setmetatable(tag_bar, tag_bar.mt)

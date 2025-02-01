@@ -1,31 +1,24 @@
-local wibox = require('wibox')
+local tb = require('widgets.wibar.topleft.tagbar')
 local wibar = require('widgets.wibar.floating_wibar')
-local taglist = require('widgets.wibar.topleft.taglist')
-local tagbar = require('widgets.wibar.topleft.tagbar')
+local wibox = require('wibox')
+
+require('widgets.wibar.topleft.tagbar.signals')
 
 local _M = {}
 
 _M.create_main_wibar = function(s)
 
-   local mytaglist = taglist.new{
-      screen = s
-   }
-
-   local taglist_width = taglist.get_width(mytaglist)
-
-   tagbar = tagbar
+   local tagbar = tb()
 
    wibar {
       screen = s,
       position = 'left',
-      width = taglist_width*2,
-      widget = wibox.widget {
-         mytaglist.taglist,
+      width = tb.get_width(), --TODO: mettre en soft la largeur de la wibox
+      widget = wibox.widget{
          tagbar,
          layout = wibox.layout.fixed.horizontal
       }
    }
-
 end
 
 return _M
