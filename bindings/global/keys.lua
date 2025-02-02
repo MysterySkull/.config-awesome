@@ -92,7 +92,10 @@ local globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ keys.super },            "r",     function () require("widgets.wibar.topleft.promptbox"):run() end,
+    awful.key({ keys.super },            "r",     function ()
+         require("widgets.wibar.topleft.promptbox"):run() 
+            awesome.emit_signal("promptbox::exec")
+         end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ keys.super }, "x",
