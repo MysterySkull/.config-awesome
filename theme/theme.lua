@@ -10,7 +10,11 @@ local themes_path = "~/.config/awesome/theme"
 
 local theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "JetBrains Mono Nerd Font 10"
+
+-----------------------------
+-- TODO COLOR OF THE THEME --
+-----------------------------
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -28,10 +32,6 @@ theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
-
-theme.menu_submenu_icon = themes_path.."/submenu.png"
-theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."/titlebar/close_normal.png"
@@ -63,38 +63,30 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."/titlebar/maximize
 theme.wallpaper = themes_path.."/background.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = themes_path.."/layouts/fairhw.png"
-theme.layout_fairv = themes_path.."/layouts/fairvw.png"
 theme.layout_floating  = themes_path.."/layouts/floatingw.png"
-theme.layout_magnifier = themes_path.."/layouts/magnifierw.png"
-theme.layout_max = themes_path.."/layouts/maxw.png"
-theme.layout_fullscreen = themes_path.."/layouts/fullscreenw.png"
-theme.layout_tilebottom = themes_path.."/layouts/tilebottomw.png"
-theme.layout_tileleft   = themes_path.."/layouts/tileleftw.png"
 theme.layout_tile = themes_path.."/layouts/tilew.png"
-theme.layout_tiletop = themes_path.."/layouts/tiletopw.png"
-theme.layout_spiral  = themes_path.."/layouts/spiralw.png"
-theme.layout_dwindle = themes_path.."/layouts/dwindlew.png"
-theme.layout_cornernw = themes_path.."/layouts/cornernww.png"
-theme.layout_cornerne = themes_path.."/layouts/cornernew.png"
-theme.layout_cornersw = themes_path.."/layouts/cornersww.png"
-theme.layout_cornerse = themes_path.."/layouts/cornersew.png"
-
--- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(
-    theme.menu_height, theme.bg_focus, theme.fg_focus
-)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 
--- Define wibars variables
-theme.wibar_height = 30
+-- Define top wibars variables
+theme.wibar_height = 40
+
+-- Define layoutbox variables
+theme.layoutbox = {}
+theme.layoutbox.size = 25
+
+-- Define promptbox variables
+theme.promptbox = {}
+theme.promptbox.size = 25
+theme.promptbox.prompt_text = '\u{f120}'
 
 -- Define taglist widget variables
-theme.tag_circle_height = 15
-theme.tag_circle_unselected_width = 15
-theme.tag_circle_selected_width = 30
+theme.tag_circle = {}
+theme.tag_circle.height = 15
+theme.tag_circle.unselected_width = 15
+theme.tag_circle.selected_width = 35
+theme.tag_circle.selection_animation_duration = 0.3
 
 return theme

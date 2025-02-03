@@ -1,5 +1,6 @@
 local lybox = require('widgets.wibar.topleft.layoutbox')
-local ptbox = require('widgets.wibar.topleft.promptbox')
+local ptbox = require('widgets.wibar.topleft.prompt_widget.prompt_box')
+local ptbox_container = require('widgets.wibar.topleft.prompt_widget.prompt_container')
 local rubato = require('rubato')
 local tb = require('widgets.wibar.topleft.tagbar')
 local wibar = require('widgets.wibar.floating_wibar')
@@ -30,34 +31,26 @@ local function new(args)
    local tagbar = tb()
    local promptbox = ptbox
    local layoutbox = lybox.create_layoutbox(args.s)
-   local promptbox_button = wibox.widget{
-      {
-         text = '\u{f120}',
-         widget = wibox.widget.textbox()
-      },
-      margins = 7.5,
-      widget = wibox.container.margin
-   }
+   local pb_container = ptbox_container()
 
    local wibar_custom = wibar {
       screen = args.s,
       position = 'left',
-      width = tb.get_width() + 30 + 7.5/2 + 30, --TODO: mettre en soft la largeur de la wibox
+      width = tb.get_width() + 45 + 7.5/2, --TODO: mettre en soft la largeur de la wibox
       widget = wibox.widget{
          layoutbox,
          tagbar,
-         promptbox_button,
-         promptbox,
+         pb_container,
          layout = wibox.layout.fixed.horizontal
       }
    }
 
    awesome.connect_signal('promptbox::ended', function()
-      redraw(wibar_custom, 500, tb.get_width() + 30 + 7.5/2 + 30)
+      redraw(wibar_custom, 500, tb.get_width() + 45 + 7.5/2)
    end)
 
    awesome.connect_signal('promptbox::exec', function()
-      redraw(wibar_custom, tb.get_width() + 30 + 7.5/2 + 30 , 500)
+      redraw(wibar_custom, tb.get_width() + 45 + 7.5/2 , 500)
    end)
 
    return wibar_custom

@@ -93,7 +93,7 @@ local globalkeys = gears.table.join(
 
     -- Prompt
     awful.key({ keys.super },            "r",     function ()
-         require("widgets.wibar.topleft.promptbox"):run() 
+         require("widgets.wibar.topleft.prompt_widget.prompt_box"):run() 
             awesome.emit_signal("promptbox::exec")
          end,
               {description = "run prompt", group = "launcher"}),

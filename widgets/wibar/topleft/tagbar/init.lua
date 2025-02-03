@@ -8,13 +8,16 @@ local client_color = '#ffffff'
 local no_client_color = '#777777'
 
 local previous_selected_tag = 1
-local tagbar_height = beautiful.tag_circle_height
+
+local tag_circle = beautiful.tag_circle
+local tagbar_height = tag_circle.height
 local wibar_height = beautiful.wibar_height
+local tagbar_circle_selected_width = tag_circle.selected_width
+local tagbar_circle_unselected_width = tag_circle.unselected_width
+local tagbar_margin = tagbar_height / 2
+local tagbar_top_bottom_margin = (wibar_height - tagbar_height) / 2
 
-local tagbar_circle_selected_width = beautiful.tag_circle_selected_width
-local tagbar_circle_unselected_width = beautiful.tag_circle_unselected_width
-
-local tagbar_margin = (wibar_height - tagbar_height) / 2
+local animation_duration = tag_circle.selection_animation_duration
 
 local tag_bar = { mt = {} }
 
@@ -22,7 +25,7 @@ local tag_item = function(widget_width, color, index, animation_type)
 
    local animate = function(position)
       return rubato.timed{
-         duration = 0.3,
+         duration = animation_duration,
          pos = position,
          easing = rubato.quadradic
       }
@@ -62,8 +65,8 @@ local tag_item = function(widget_width, color, index, animation_type)
       {
          widget = t_item
       },
-      top = tagbar_margin,
-      bottom = tagbar_margin,
+      top = tagbar_top_bottom_margin,
+      bottom = tagbar_top_bottom_margin,
       left = tagbar_margin/2,
       right = tagbar_margin/2,
       buttons = t_buttons,
@@ -113,7 +116,7 @@ local update_tagbar_animation = function(self)
 end
 
 tag_bar.get_width = function()
-   local width = #awful.screen.focused().tags 
+   local width = #awful.screen.focused().tags
       * (tagbar_circle_unselected_width + tagbar_margin)
       + tagbar_circle_selected_width - tagbar_circle_unselected_width
    return width
