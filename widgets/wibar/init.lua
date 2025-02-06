@@ -5,10 +5,8 @@ local _M = {}
 
 
 _M.create_wibars = function(s)
-   local m_wb = main_wibar{
-      screen = s
-   }
-   system_wibar.create_system_wibar(s)
+   main_wibar{ screen = s }
+   system_wibar{ screen = s}
 end
 
 return _M

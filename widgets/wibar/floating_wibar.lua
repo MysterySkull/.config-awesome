@@ -1,6 +1,5 @@
-local wibox = require("wibox")
-local gears = require("gears")
 local beautiful = require("beautiful")
+local wibox = require("wibox")
 
 local floating_wibar = { mt = {} }
 
@@ -28,7 +27,7 @@ local function new(args)
       screen = args.screen,
       width = widget_width,
       height = beautiful.wibar_height,
-      bg = "#00000070",
+      bg = '#00000080',
       visible = true,
       ontop = false,
       widget = args.widget,

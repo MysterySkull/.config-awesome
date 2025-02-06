@@ -1,5 +1,4 @@
 local lybox = require('widgets.wibar.topleft.layoutbox')
-local ptbox = require('widgets.wibar.topleft.prompt_widget.prompt_box')
 local ptbox_container = require('widgets.wibar.topleft.prompt_widget.prompt_container')
 local rubato = require('rubato')
 local tb = require('widgets.wibar.topleft.tagbar')
@@ -12,7 +11,7 @@ require('widgets.wibar.topleft.tagbar.signals')
 local m_wb = { mt = {} }
 
 local redraw = function(self, initial_width, final_width)
-   
+
    local wb_animation = rubato.timed{
       duration = 0.1,
       pos = initial_width,
@@ -29,7 +28,6 @@ end
 local function new(args)
 
    local tagbar = tb()
-   local promptbox = ptbox
    local layoutbox = lybox.create_layoutbox(args.s)
    local pb_container = ptbox_container()
 

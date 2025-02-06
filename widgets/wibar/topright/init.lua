@@ -3,20 +3,34 @@ local wibox = require('wibox')
 local wibar = require('widgets.wibar.floating_wibar')
 
 local clock = require('widgets.wibar.topright.clock')
+local sound = require('widgets.wibar.topright.sound')
 
-local _M = {}
+local sys_wibar = { mt = {} }
 
-_M.create_system_wibar = function(s)
+local function new(args)
 
-   wibar {
-      screen = s,
+   return wibar {
+      screen = args.s,
       position = 'right',
       widget = wibox.widget {
-         clock,
-         layout = wibox.layout.fixed.horizontal
+         {
+            {
+               sound,
+               clock,
+               layout = wibox.layout.fixed.horizontal
+            },
+            right = 5,
+            left = 5,
+            widget = wibox.container.margin
+         },
+         halign = "right",
+         widget = wibox.container.place,
       }
    }
-
 end
 
-return _M
+function sys_wibar.mt:__call(...)
+   return new(...)
+end
+
+return setmetatable(sys_wibar, sys_wibar.mt)

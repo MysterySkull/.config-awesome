@@ -4,22 +4,26 @@
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
+--local color = require("theme.color")
 local dpi = xresources.apply_dpi
 
 local themes_path = "~/.config/awesome/theme"
 
 local theme = {}
 
-theme.font          = "JetBrains Mono Nerd Font 10"
+theme.font          = "Ubuntu Nerd Font 10"
+
+local opacity = "50"
+
 
 -----------------------------
 -- TODO COLOR OF THE THEME --
 -----------------------------
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = "#222222" .. opacity
+theme.bg_focus      = "#535d6c" .. opacity
+theme.bg_urgent     = "#ff0000" .. opacity
+theme.bg_minimize   = "#444444" .. opacity
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#aaaaaa"
@@ -29,9 +33,9 @@ theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.border_normal = "#000000" .. opacity
+theme.border_focus  = "#535d6c" .. opacity
+theme.border_marked = "#91231c" .. opacity
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."/titlebar/close_normal.png"
@@ -60,7 +64,8 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."/titlebar/maximi
 theme.titlebar_maximized_button_normal_active = themes_path.."/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path.."/background.jpg"
+--theme.wallpaper = themes_path.."/background.jpg"
+theme.wallpaper = "~/Images/wallhaven-nzwk7y.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_floating  = themes_path.."/layouts/floatingw.png"
