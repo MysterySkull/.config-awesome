@@ -2,6 +2,7 @@
 -- Default awesome theme --
 ---------------------------
 
+local gears = require('gears')
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 --local color = require("theme.color")
@@ -70,6 +71,16 @@ theme.wallpaper = "~/Images/wallhaven-nzwk7y.jpg"
 -- You can use your own layout icons like this:
 theme.layout_floating  = themes_path.."/layouts/floatingw.png"
 theme.layout_tile = themes_path.."/layouts/tilew.png"
+
+--sound widget theme
+theme.sound_icon_size = 25
+theme.sound_icon_color = "#777777"
+theme.sound_icon_min = themes_path.."/icons/sound/sound_icon_min.svg"
+theme.sound_icon_25 = themes_path.."/icons/sound/sound_icon_25.svg"
+theme.sound_icon_50 = themes_path.."/icons/sound/sound_icon_50.svg"
+theme.sound_icon_75 = themes_path.."/icons/sound/sound_icon_75.svg"
+theme.sound_icon_max = themes_path.."/icons/sound/sound_icon_max.svg"
+theme.sound_icon_mute = themes_path.."/icons/sound/sound_icon_mute.svg"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
