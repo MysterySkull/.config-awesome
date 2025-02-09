@@ -4,6 +4,7 @@ local wibar = require('widgets.wibar.floating_wibar')
 
 local clock = require('widgets.wibar.topright.clock')
 local sound = require('widgets.wibar.topright.sound')
+local battery = require('widgets.wibar.topright.battery')
 
 local sys_wibar = { mt = {} }
 
@@ -15,6 +16,7 @@ local function new(args)
       widget = wibox.widget {
          {
             {
+               battery,
                sound,
                clock,
                layout = wibox.layout.fixed.horizontal

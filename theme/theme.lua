@@ -82,6 +82,32 @@ theme.sound_icon_75 = themes_path.."/icons/sound/sound_icon_75.svg"
 theme.sound_icon_max = themes_path.."/icons/sound/sound_icon_max.svg"
 theme.sound_icon_mute = themes_path.."/icons/sound/sound_icon_mute.svg"
 
+--Battery widget
+theme.battery_icon_size = 25
+theme.battery_icon_color = "#777777"
+theme.battery_icon_100 = themes_path.."/icons/battery/batterie_icon_full.svg"
+theme.battery_icon_90 = themes_path.."/icons/battery/batterie_icon_90.svg"
+theme.battery_icon_80 = themes_path.."/icons/battery/batterie_icon_80.svg"
+theme.battery_icon_70 = themes_path.."/icons/battery/batterie_icon_70.svg"
+theme.battery_icon_60 = themes_path.."/icons/battery/batterie_icon_60.svg"
+theme.battery_icon_50 = themes_path.."/icons/battery/batterie_icon_50.svg"
+theme.battery_icon_40 = themes_path.."/icons/battery/batterie_icon_40.svg"
+theme.battery_icon_30 = themes_path.."/icons/battery/batterie_icon_30.svg"
+theme.battery_icon_20 = themes_path.."/icons/battery/batterie_icon_20.svg"
+theme.battery_icon_10 = themes_path.."/icons/battery/batterie_icon_10.svg"
+theme.battery_icon_00 = themes_path.."/icons/battery/batterie_icon_00.svg"
+theme.battery_icon_100_charging = themes_path.."/icons/battery/batterie_icon_full_charging.svg"
+theme.battery_icon_90_charging = themes_path.."/icons/battery/batterie_icon_90_charging.svg"
+theme.battery_icon_80_charging = themes_path.."/icons/battery/batterie_icon_80_charging.svg"
+theme.battery_icon_70_charging = themes_path.."/icons/battery/batterie_icon_70_charging.svg"
+theme.battery_icon_60_charging = themes_path.."/icons/battery/batterie_icon_60_charging.svg"
+theme.battery_icon_50_charging = themes_path.."/icons/battery/batterie_icon_50_charging.svg"
+theme.battery_icon_40_charging = themes_path.."/icons/battery/batterie_icon_40_charging.svg"
+theme.battery_icon_30_charging = themes_path.."/icons/battery/batterie_icon_30_charging.svg"
+theme.battery_icon_20_charging = themes_path.."/icons/battery/batterie_icon_20_charging.svg"
+theme.battery_icon_10_charging = themes_path.."/icons/battery/batterie_icon_10_charging.svg"
+theme.battery_icon_00_charging = themes_path.."/icons/battery/batterie_icon_00_charging.svg"
+
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil

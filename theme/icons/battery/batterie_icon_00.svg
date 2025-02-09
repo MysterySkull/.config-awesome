@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="batterie_icon_00.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="9.1548941"
+     inkscape:cx="37.57553"
+     inkscape:cy="28.563957"
+     inkscape:window-width="1900"
+     inkscape:window-height="986"
+     inkscape:window-x="10"
+     inkscape:window-y="60"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1"
+     showguides="false">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="12"
+       enabled="true"
+       visible="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect8"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,1.3929289,0,1 @ F,0,1,1,0,1.3929289,0,1 @ F,0,1,1,0,1.3929289,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,1.3929289,0,1 @ F,0,1,1,0,1.3929289,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,1.3929289,0,1 | F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="M 0,13.392929 V 34.607071 A 1.3929289,1.3929289 45 0 0 1.3929289,36 H 42.607071 A 1.3929289,1.3929289 135 0 0 44,34.607071 V 29 h 2.607071 A 1.3929289,1.3929289 135 0 0 48,27.607071 V 20.392929 A 1.3929289,1.3929289 45 0 0 46.607071,19 H 44 V 13.392929 A 1.3929289,1.3929289 45 0 0 42.607071,12 H 1.3929289 A 1.3929289,1.3929289 135 0 0 0,13.392929 Z M 2,14 H 42 V 34 H 2 Z"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0;paint-order:stroke fill markers"
+       id="path8"
+       inkscape:path-effect="#path-effect8"
+       inkscape:original-d="m 0,12 v 24 h 44 v -7 h 4 V 19 h -4 v -7 z m 2,2 H 42 V 34 H 2 Z"
+       sodipodi:nodetypes="cccccccccccccc" />
+    <path
+       d="M 4,16 V 32 H 40 V 16 Z"
+       style="opacity:0.25;fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0;paint-order:stroke fill markers"
+       id="path7-2"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <path
+     d="m 4,16 v 16 0 z"
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0;paint-order:stroke fill markers"
+     id="path7"
+     sodipodi:nodetypes="ccccc"
+     inkscape:label="path7" />
+</svg>
