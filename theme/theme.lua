@@ -119,6 +119,9 @@ theme.internet_icon_wifi_0 = themes_path.."/icons/internet/wifi_0.svg"
 theme.internet_icon_wifi_connect = themes_path.."/icons/internet/wifi_connect.svg"
 
 -- bluetooth widget
+theme.bluetooth_icon_on = themes_path.."/icons/bluetooth/bluetooth_on.svg"
+theme.bluetooth_icon_off = themes_path.."/icons/bluetooth/bluetooth_off.svg"
+theme.bluetooth_icon_connected = themes_path.."/icons/bluetooth/bluetooth_connected.svg"
 
 
 -- Define the icon theme for application icons. If not set then the icons
