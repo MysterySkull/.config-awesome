@@ -51,6 +51,8 @@ local function set_icon_percent_not_charging(widget, percent)
    
    local index = math.floor( (percent+5) / 10 ) + 1
 
+   animation_counter = 0
+
    widget.image = icon[index]
 end
 
@@ -104,7 +106,7 @@ local function new()
    local container = wibox.widget{
       {
          w,
-         bg = "#00ff00",
+         --bg = "#00ff00",
          widget = wibox.container.background
       },
       margins = (beautiful.wibar_height - beautiful.battery_icon_size)/2,

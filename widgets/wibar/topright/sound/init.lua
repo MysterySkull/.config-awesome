@@ -69,7 +69,7 @@ local function new()
          {
             widget = w,
          },
-         bg = "#0000ff",
+         --bg = "#0000ff",
          widget = wibox.container.background,
       },
       margins = (beautiful.wibar_height - beautiful.sound_icon_size)/2,

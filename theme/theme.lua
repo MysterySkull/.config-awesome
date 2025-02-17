@@ -74,7 +74,7 @@ theme.layout_tile = themes_path.."/layouts/tilew.png"
 
 --sound widget theme
 theme.sound_icon_size = 25
-theme.sound_icon_color = "#777777"
+theme.sound_icon_color = "#ffffff"
 theme.sound_icon_min = themes_path.."/icons/sound/sound_icon_min.svg"
 theme.sound_icon_25 = themes_path.."/icons/sound/sound_icon_25.svg"
 theme.sound_icon_50 = themes_path.."/icons/sound/sound_icon_50.svg"
@@ -84,7 +84,7 @@ theme.sound_icon_mute = themes_path.."/icons/sound/sound_icon_mute.svg"
 
 --Battery widget
 theme.battery_icon_size = 25
-theme.battery_icon_color = "#777777"
+theme.battery_icon_color = "#ffffff"
 theme.battery_icon_100 = themes_path.."/icons/battery/batterie_icon_full.svg"
 theme.battery_icon_90 = themes_path.."/icons/battery/batterie_icon_90.svg"
 theme.battery_icon_80 = themes_path.."/icons/battery/batterie_icon_80.svg"
@@ -107,6 +107,19 @@ theme.battery_icon_30_charging = themes_path.."/icons/battery/batterie_icon_30_c
 theme.battery_icon_20_charging = themes_path.."/icons/battery/batterie_icon_20_charging.svg"
 theme.battery_icon_10_charging = themes_path.."/icons/battery/batterie_icon_10_charging.svg"
 theme.battery_icon_00_charging = themes_path.."/icons/battery/batterie_icon_00_charging.svg"
+
+--internet widget
+theme.internet_icon_ethernet = themes_path.."/icons/internet/ethernet.svg"
+theme.internet_icon_no_internet = themes_path.."/icons/internet/no_wifi.svg"
+theme.internet_icon_wifi_4 = themes_path.."/icons/internet/wifi_4.svg"
+theme.internet_icon_wifi_3 = themes_path.."/icons/internet/wifi_3.svg"
+theme.internet_icon_wifi_2 = themes_path.."/icons/internet/wifi_2.svg"
+theme.internet_icon_wifi_1 = themes_path.."/icons/internet/wifi_1.svg"
+theme.internet_icon_wifi_0 = themes_path.."/icons/internet/wifi_0.svg"
+theme.internet_icon_wifi_connect = themes_path.."/icons/internet/wifi_connect.svg"
+
+-- bluetooth widget
+
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
