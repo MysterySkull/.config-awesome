@@ -109,7 +109,7 @@ local function new()
          --bg = "#00ff00",
          widget = wibox.container.background
       },
-      margins = (beautiful.wibar_height - beautiful.battery_icon_size)/2,
+      margins = (beautiful.wibar.height - beautiful.battery_icon_size)/2,
       widget = wibox.container.margin
    }
 

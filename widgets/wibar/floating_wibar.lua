@@ -26,7 +26,7 @@ local function new(args)
       type = 'dock',
       screen = args.screen,
       width = widget_width,
-      height = beautiful.wibar_height,
+      height = beautiful.wibar.height,
       bg = '#00000080',
       visible = true,
       ontop = false,
@@ -34,7 +34,7 @@ local function new(args)
    }
 
    wibar:struts {
-      top = beautiful.wibar_height + gap,
+      top = beautiful.wibar.height + gap,
    }
 
    return wibar

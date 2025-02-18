@@ -11,7 +11,7 @@ local previous_selected_tag = 1
 
 local tag_circle = beautiful.tag_circle
 local tagbar_height = tag_circle.height
-local wibar_height = beautiful.wibar_height
+local wibar_height = beautiful.wibar.height
 local tagbar_circle_selected_width = tag_circle.selected_width
 local tagbar_circle_unselected_width = tag_circle.unselected_width
 local tagbar_margin = tagbar_height / 2

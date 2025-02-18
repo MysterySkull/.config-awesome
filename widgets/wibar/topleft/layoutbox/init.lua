@@ -3,7 +3,7 @@ local beautiful = require('beautiful')
 local gears = require('gears')
 local wibox = require('wibox')
 
-local wb_height = beautiful.wibar_height
+local wb_height = beautiful.wibar.height
 local lb_margins = (wb_height - beautiful.layoutbox.size)/2
 
 local _M = {}

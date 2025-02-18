@@ -12,7 +12,10 @@ local themes_path = "~/.config/awesome/theme"
 
 local theme = {}
 
-theme.font          = "Ubuntu Nerd Font 10"
+theme.font_size = 10
+theme.font_type = "Ubuntu Nerd Font"
+
+theme.font          = theme.font_type .. " " .. theme.font_size
 
 local opacity = "50"
 
@@ -129,7 +132,16 @@ theme.bluetooth_icon_connected = themes_path.."/icons/bluetooth/bluetooth_connec
 theme.icon_theme = nil
 
 -- Define top wibars variables
-theme.wibar_height = 40
+theme.wibar = {
+   height = 40,
+}
+
+-- Define clock widget variables
+theme.clock_widget = {
+   height = 25,
+   font = theme.font_type .. " Bold",
+}
+
 
 -- Define layoutbox variables
 theme.layoutbox = {}
