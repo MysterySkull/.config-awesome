@@ -78,12 +78,6 @@ theme.layout_tile = themes_path.."/layouts/tilew.png"
 --sound widget theme
 theme.sound_icon_size = 25
 theme.sound_icon_color = "#ffffff"
-theme.sound_icon_min = themes_path.."/icons/sound/sound_icon_min.svg"
-theme.sound_icon_25 = themes_path.."/icons/sound/sound_icon_25.svg"
-theme.sound_icon_50 = themes_path.."/icons/sound/sound_icon_50.svg"
-theme.sound_icon_75 = themes_path.."/icons/sound/sound_icon_75.svg"
-theme.sound_icon_max = themes_path.."/icons/sound/sound_icon_max.svg"
-theme.sound_icon_mute = themes_path.."/icons/sound/sound_icon_mute.svg"
 
 --Battery widget
 theme.battery_icon_size = 25
@@ -142,6 +136,21 @@ theme.clock_widget = {
    font = theme.font_type .. " Bold",
 }
 
+theme.system_widget = {
+   height = 25,
+   color = "#ffffff",
+
+   sound_widget = {
+      icons = {
+         level_min = themes_path.."/icons/sound/sound_icon_min.svg",
+         level_25 = themes_path.."/icons/sound/sound_icon_25.svg",
+         level_50 = themes_path.."/icons/sound/sound_icon_50.svg",
+         level_75 = themes_path.."/icons/sound/sound_icon_75.svg",
+         level_max = themes_path.."/icons/sound/sound_icon_max.svg",
+         mute = themes_path.."/icons/sound/sound_icon_mute.svg",
+      },
+   },
+}
 
 -- Define layoutbox variables
 theme.layoutbox = {}

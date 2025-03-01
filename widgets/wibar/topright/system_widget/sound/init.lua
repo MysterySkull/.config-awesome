@@ -1,10 +1,10 @@
 local awful = require('awful')
 local gears = require('gears')
 local beautiful = require('beautiful')
-local snd_w_btn = require('widgets.wibar.topright.sound.button')
+local snd_w_btn = require('widgets.wibar.topright.system_widget.sound.button')
 local wibox = require('wibox')
 
-local clk_widget = { mt = {} }
+local snd_widget = { mt = {} }
 
 local set_sound_icon = function(widget, str_volume)
    local isMute = string.sub(str_volume, 1, 1)
@@ -66,14 +66,10 @@ local function new()
 
    local container = wibox.widget{
       {
-         {
-            widget = w,
-         },
-         --bg = "#0000ff",
-         widget = wibox.container.background,
+         widget = w,
       },
-      margins = (beautiful.wibar.height - beautiful.sound_icon_size)/2,
-      widget = wibox.container.margin
+      --bg = "#0000ff",
+      widget = wibox.container.background,
    }
 
    awful.widget.watch('bash -c "pulsemixer --get-mute --get-volume"', 0.1, function(widget, stdout)
@@ -81,12 +77,11 @@ local function new()
       set_sound_icon(w, stdout)
    end)
 
-   --return container
    return container
 end
 
-function clk_widget.mt:__call(...)
+function snd_widget.mt:__call(...)
    return new(...)
 end
 
-return setmetatable(clk_widget, clk_widget.mt)
+return setmetatable(snd_widget, snd_widget.mt)

@@ -68,7 +68,7 @@ local function new()
       widget = wibox.container.margin
    }
 
-   awful.widget.watch('bash -c "~/.config/awesome/widgets/wibar/topright/internet/internet_status.sh"', 0.1, function(_, stdout)
+   awful.widget.watch('bash -c "~/.config/awesome/widgets/wibar/topright/system_widget/internet/internet_status.sh"', 0.1, function(_, stdout)
       internet_connectivity_info = get_internet_connectivity_info(string.sub(stdout, 1, string.len(stdout) - 1))
       w_tooltip.text = internet_connectivity_info.ssid
       set_widget_image(w, internet_connectivity_info)

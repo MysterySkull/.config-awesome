@@ -1,12 +1,8 @@
 local wibox = require('wibox')
-
 local wibar = require('widgets.wibar.floating_wibar')
+local clk_widget = require('widgets.wibar.topright.clock')
+local sys_widget = require('widgets.wibar.topright.system_widget')
 
-local clock = require('widgets.wibar.topright.clock')
-local sound = require('widgets.wibar.topright.sound')
-local battery = require('widgets.wibar.topright.battery')
-local internet = require('widgets.wibar.topright.internet')
-local bluetooth = require('widgets.wibar.topright.bluetooth')
 
 local sys_wibar = { mt = {} }
 
@@ -18,15 +14,12 @@ local function new(args)
       widget = wibox.widget {
          {
             {
-               bluetooth,
-               internet,
-               battery,
-               sound,
-               clock,
+               sys_widget,
+               clk_widget,
                layout = wibox.layout.fixed.horizontal
             },
-            right = 5,
-            left = 5,
+            --right = 5,
+            --left = 5,
             widget = wibox.container.margin
          },
          halign = "right",
